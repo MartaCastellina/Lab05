@@ -2,12 +2,25 @@ package it.polito.tdp.model;
 
 import java.util.*;
 
+import it.polito.tdp.DAO.AnagrammiDAO;
+
 public class Model {
 
 	List <String> soluzione; //Elenco delle soluzioni
 	Map<Character, Integer> lettere; //Array di caratteri della parola
+	Set <String> dizionario;
 	
 	
+	
+	
+	
+	
+	public Model() {
+		AnagrammiDAO anagrammiDAO=new AnagrammiDAO();
+		this.dizionario=anagrammiDAO.getDizionario();
+	}
+
+
 	public List<String> calcolaPermutazioni(String s){
 		
 		soluzione=new ArrayList<String>();
@@ -42,7 +55,7 @@ public class Model {
 		if(parziale.length()==lunghezza) {
 			
 			soluzione.add(parziale);
-			System.out.println(soluzione);
+		//	System.out.println(soluzione);
 			return;
 		}
 		for (Character c:lettere.keySet()) {
@@ -71,6 +84,12 @@ public class Model {
 		}
 		return flag;
 	}
+	
+	public boolean isCorrect(String s) {
+		return dizionario.contains(s);
+		
+	}
+	
 	
 	
 }

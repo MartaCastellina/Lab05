@@ -7,11 +7,12 @@ public class TestModel {
 		
 		
 		
-		model.calcolaPermutazioni("eat");
-		System.out.println(model.lettere);
-		System.out.println(model.isCorretta("aat"));
-		
-	
+//		model.calcolaPermutazioni("eat");
+//		System.out.println(model.lettere);
+//		System.out.println(model.isCorretta("aat"));
+
+	//System.out.println(model.dizionario.get(2));
+		System.out.println(model.isCorrect("zoo"));
 
 	}
 
